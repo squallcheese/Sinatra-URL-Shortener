@@ -1,0 +1,27 @@
+<div class="container">
+  <h1>Welcome to URL Shortener!</h1>
+  <p>Insert your link below</p>
+
+<form action="/urls" method="post">
+<input type ="text" name="url_input">
+<input type="submit" value="Shorten">
+</form>
+
+<h3>Current Shortened Url</h3>
+
+ <table border=1>
+ <tr>
+ <th>Url</th>
+ <th>Short Url</th>
+ <th>Click count</th>
+ </tr>
+ <% @short_url.each do |url|%>
+ <tr>
+ <td><%= url.long_url%></td>
+ <td><a href = "<%= url.short_url%>"><%=url.short_url%></td>
+ <td><%= url.click_count%></td>
+ </tr>
+ <% end %>
+ </table>
+
+</div>
